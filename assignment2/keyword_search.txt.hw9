@@ -1,6 +1,3 @@
-SELECT docid, max(s) as m
-from
-(
 SELECT A.docid as docid, SUM(A.count * B.count) as s
   FROM Frequency A, 
 (
@@ -14,6 +11,5 @@ SELECT 'q' as docid, 'treasury' as term, 1 as count
 ) B
  WHERE A.term = B.term
  and B.docid = 'q'
- GROUP BY A.docid, B.docid) as v
-group by docid
-order by m asc;
+ GROUP BY A.docid, B.docid
+order by s asc;
