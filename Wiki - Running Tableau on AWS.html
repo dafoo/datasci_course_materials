@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<title>Wiki - Running Tableau on AWS | Introduction to Data Science</title>
+<link rel="stylesheet" href="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/css/spark.main.css" />
+<link rel="stylesheet" href="https://www.coursera.org/maestro/api/course/346/course.css">
+<link rel="icon" href="https://spark-public.s3.amazonaws.com/datasci/static/images/favicon.ico" />
+</head>
+
+<body>
+    
+    <a href="#course-page-content" class="hidden">Skip Navigation</a>
+    <div class="hidden">
+        This page features MathJax technology to render mathematical formulae.
+        If you are using a screen reader, please visit <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> to download the plugin for your browser. Please note that this is an Internet Explorer-only plugin at this time.
+    </div>
+
+    <h1 class="hidden">Introduction to Data Science</h1>
+
+    
+
+<div class="course-topbar container-fluid" role="banner">
+
+    <div class="row-fluid">
+        
+        <div class="span3">
+          <a href="https://www.coursera.org/" class="course-topbar-logo" data-if-linkable="add-referrer"></a>
+        </div>
+
+        <div class="course-topbar-nav-container span9" style="float:right;">
+            <h2 class="hidden">Top Navigation Bar</h2>
+
+            <ul class="course-topbar-nav-list">
+                <li class="course-topbar-nav-list-item">
+                  <a href="https://www.coursera.org/courses" data-if-linkable="add-referrer">Courses</a>
+                </li>
+
+                                
+                <li class="course-topbar-nav-list-item"
+                    tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="course-topbar-my"
+                    data-popup="#course-topbar-my" data-popup-bind-open="mouseenter" data-popup-close style="cursor:pointer;" data-popup-direction="se">
+                                        <a data-user-id="1513511">  
+                        Foo Lim 
+                        <i class="icon-caret-down"></i>
+                    </a>
+                </li>
+               
+                            </ul>
+        </div>
+    </div>
+
+    <div id="course-topbar-aboutus" class="course-topbar-sublist">
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/jobs" target="_new" data-if-linkable="add-referrer">Jobs</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/team" target="_new" data-if-linkable="add-referrer">Team</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/contact" target="_new" data-if-linkable="add-referrer">Contact Us</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/" target="_new" data-if-linkable="add-referrer">About Us</a>
+    </div>
+
+    <div id="course-topbar-my" class="course-topbar-sublist">
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/" target="_new">Courses</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/profile" target="_new">Profile</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/records" target="_new">Course Records</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/settings" target="_new">Settings</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/datasci-001/class/preferences">Course Preferences</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/datasci-001/auth/logout">Sign Out</a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<style type="text/css">
+ 
+
+
+</style>
+<div class="course-topbanner">
+  <div class="course-topbanner-university-logo">
+    <a href="https://www.coursera.org/uw" class="coursera-university-color" target="_blank" data-if-linkable="add-referrer" title="https://www.coursera.org/uw">
+      <img src="https://www.coursera.org/maestro/api/course/346/university_logo" alt="uw">
+    </a>
+  </div>
+
+  
+  <h1 class="course-topbanner-header">
+      <a class="course-topbanner-name coursera-university-color" href="https://class.coursera.org/datasci-001/class/index" data-if-linkable="modal-lock">
+        Introduction to Data Science      </a>
+      <br>
+      <span class="course-topbanner-instructor" style="">
+        by Bill  Howe      </span>
+  </h1>
+</div>
+    
+        <div class="container-fluid" style="position:relative;">
+        <div class="row-fluid">
+            <div id="course-page-sidebar" role="navigation">
+                <div class="course-navbar-container">
+	<a href="https://class.coursera.org/datasci-001/class/index"
+      >
+	<img src="https://www.coursera.org//maestro/api/course/346/logo" style="width: 210px;height: 112px;margin: -15px 0px 8px 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);" alt="Course Home Page">
+	</a>
+<h2 class="hidden">Side Navigation Bar</h2>
+<ul class="course-navbar-list">
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/class/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Home							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/lecture/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Video Lectures							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/forum/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Discussion Forums							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/assignment/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Programming Assignments							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/quiz/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Quizzes							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/human_grading/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Peer Assessments							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=OptionalRealWorldProject"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Optional Real-World Project							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=syllabus"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Syllabus							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=courselogistics"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Course Logistics							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=tableau_aws"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Running Tableau on AWS							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=ClassVirtualMachine"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Class Virtual Machine							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=GithubInstructions"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Github Instructions							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=PythonResources"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Python Resources							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=awssetup"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				AWS Setup							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/quiz/index?quiz_type=survey"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Surveys							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=aboutus"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				About Us							</a>
+						</li>
+	
+	
+		<li class="course-navbar-item">
+		<a href="https://share.coursera.org/wiki/index.php/datasci:Main" target="_blank" class="coursera-university-color" title="Open course wiki in new window">
+			Course Wiki
+			<span class="icon-share"></span>
+		</a>
+	</li>
+		
+		<li class="course-navbar-item">
+		<a href="http://www.meetup.com/Coursera/" target="_blank" class="coursera-university-color">
+			Join a Meetup
+			<span class="icon-share"></span>
+		</a>
+	</li>
+	
+    </ul>
+
+<ul style="list-style-type:none;margin-left: 10px;">
+  <li><a href="http://help.coursera.org" class="coursera-university-color" target="_blank" title="Open help articles in new window"><i class="icon-question-sign"></i> Help Articles</a></li>
+</ul>
+
+<ul style="list-style-type:none;margin-left: 10px;">
+	
+</ul>
+
+</div>
+            </div>
+            <div id="course-page-content" role="main">
+                                
+
+<h2 class="course-page-header">
+    Running Tableau on AWS    <a class="coursera-reporter-link" target="_blank" href="https://class.coursera.org/datasci-001/class/reporter?url=http%3A%2F%2Fclass.coursera.org%2Fdatasci-001%2Fwiki%2Fview%3Fpage%3Dtableau_aws&area=pages&title=Running+Tableau+on+AWS">
+      Report a problem
+    </a>
+    <a data-coursera-admin-helpwidget-link rel="help" href="http://support.coursera.org/customer/portal/articles/823871-adding-course-pages" title="Adding course pages" style="display:none;">Learn more.</a><a data-coursera-admin-helpwidget-link rel="discuss" href='https://class.coursera.org/mooc/forum/tag?name=CoursePage&forum_id=7' style='display:none;'>Discuss</a>
+</h2>
+
+<div id="internal_html_page_content">
+
+<p> <strong>
+        Instructions for Setting up a Windows Server on AWS for Tableau Desktop
+        <br>
+        June 2013
+    </strong>
+
+</p>
+<p>1) Go to <a href="http://aws.amazon.com">http://aws.amazon.com</a>
+
+</p>
+<p>2) Sign up for an account, if you don’t already have one</p>
+<p>a. You will be asked to supply a credit card to have on hand, even though
+    we will be using the free tier of AWS</p>
+<p>b. Part of this verification process will be to receive a telephone call
+    at the number you provide</p>
+<p>c. The following screen serves as a confirmation of your enrollment</p>
+<p>
+    <img border="0" width="423" height="300" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image002.png"></p>
+<p>d. You will receive an email once your account is ready for use</p>
+<p>3) Go to your “AWS Management Console” on the left sidebar once signed
+    in, or just access at <a href="http://aws.amazon.com/console/" title="Link: http://aws.amazon.com/console/">http://aws.amazon.com/console/</a>
+
+</p>
+<p>
+    <img border="0" width="402" height="323" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image004.png"></p>
+<p><br></p>
+<p>4) Click “Sign in to the AWS Console”</p>
+<p> 
+    <img border="0" width="422" height="290" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image006.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image006.png"></p>
+<p><br></p>
+<p>5) On the console home page, click “EC2”</p>
+<p> 
+    <img border="0" width="408" height="197" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image008.png" title="Image: file://localhost/Users/billhowe/Library/Caches/TemporaryItems/msoclip/0/clip_image008.png"></p>
+<p>6) Click “Launch Instance”</p>
+<p> 
+    <img border="0" width="407" height="246" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image010.png" title="Image: file://localhost/Users/billhowe/Library/Caches/TemporaryItems/msoclip/0/clip_image010.png"></p>
+<p>7) When prompted, go through the “Classic Wizard” and choose a “Microsoft
+    Windows Server 2008 R2 Base” – this is a server covered under the free
+    tier of AWS
+    <img border="0" width="405" height="264" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image012.png"></p>
+<p>8) Choose to create T1 Micro instance (it should default to this) and
+    click continue</p>
+<p> 
+    <img border="0" width="415" height="282" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image014.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image014.png"></p>
+<p>9) Click through the next page without making changes – click through
+    the following page as well</p>
+<p> 
+    <img border="0" width="411" height="283" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image016.png" title="Image: file://localhost/Users/billhowe/Library/Caches/TemporaryItems/msoclip/0/clip_image016.png"></p>
+<p>10) You have the option of creating a key for this instance – this is
+    optional metadata for your own purposes</p>
+<p> 
+    <img border="0" width="403" height="275" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image018.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image018.png"></p>
+<p>11) Now we can create a key pair – give it a name and click “Create &amp;
+    Download your Key Pair.” Save this file ([keypairname].pem) somewhere convenient</p>
+<p> 
+    <img border="0" width="405" height="276" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image020.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image020.png"></p>
+<p>12) Click through the next screen – but take note of the port mentioned
+    on the right of the page (3389) </p>
+<p>     <img border="0" width="405" height="274" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image022.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image022.png"></p>
+<p>13) Click “Launch” on the next page</p>
+<p> 
+    <img border="0" width="413" height="279" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image024.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image024.png"></p>
+<p>14) You will receive a notification that your instance is launching –
+    it will likely take several minutes for it to fully launch</p>
+<p> 
+    <img border="0" width="408" height="223" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image026.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image026.png"></p>
+<p>15) Closing the previous screen will take you back to your list of AWS
+    instances. Wait until your machine says “running” under state and “2/2
+    checks passed” under status checks. Then, right click the instance and
+    click “connect”</p>
+<p> 
+    <img border="0" width="423" height="218" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image028.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image028.png"></p>
+<p>16) On this screen, you’ll be given your credentials to log in to the
+    virtual machine. Click “Retrieve Password” and upload your previously created
+    private key to get your administrator password. Once you upload your key
+    and get your password, take note of the login name (Administrator) and
+    the password</p>
+<p>
+    <img border="0" width="295" height="246" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image030.png"></p>
+<p>
+    <img border="0" width="291" height="216" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image032.png"></p>
+<p>a. For the next step, if you do not already have a remote desktop connection
+    client, you can get the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=18140" title="Link: http://www.microsoft.com/en-us/download/details.aspx?id=18140">Microsoft Remote Desktop Connection Client for Mac</a> or
+    <a href="http://www.rdesktop.org/" title="Link: http://www.rdesktop.org/">rdesktop</a> for Unix-based distros</p>
+<p>17) Open your remote desktop connection client and connect to your public
+    IP address. Use your username and password previously provided to log in.
+    Click through any security warnings that may arise</p>
+<p>
+    <img border="0" width="271" height="253" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image034.png"></p>
+<p>18) Your instance of Windows Server is up and running! Go to <a href="http://www.tableausoftware.com/tft/activation">www.tableausoftware.com/tft/activation</a> to
+    download a copy of Tableau to this machine (you may have to click through
+    some security notifications). Click “Get your copy of Tableau” and fill
+    out the form provided</p>
+<p>19) You will be redirected to a download page – if your download does
+    not start immediately, click the “click here” text to start the download.
+    If you receive a security pop-up, clicking “add” can help mitigate any
+    problems you experience downloading the file</p>
+<p>20) Open the file “TableauDesktop.exe” you’ve downloaded and click through
+    the install wizard</p>
+<p>21) Once the program installs, you will have three options to activate
+    Tableau: choose “Activate the product”</p>
+<p>
+    <img border="0" width="281" height="216" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image036.png" title="Image: file://localhost/Users/billhowe/Library/Caches/TemporaryItems/msoclip/0/clip_image036.png"></p>
+<p>22) Enter the product key provided</p>
+<p>23) You will be asked to fill out your name and email address – please
+    use the same information you used on the download page</p>
+<p>24) Now you’re ready to start working with Tableau! To exit out of your
+    AWS server, click the X in the upper middle of the screen – everything
+    open will still be there when you connect to the server again</p>
+<p>25) When you are eventually finished with your AWS server, back in your
+    instances page, right click the instance and select “Terminate”</p>
+<p> 
+    <img border="0" width="430" height="226" src="https://spark-public.s3.amazonaws.com/datasci/images/tableau/image038.png" title="Image: https://spark-public.s3.amazonaws.com/datasci/images/tableau/image038.png"></p>
+</div>
+<hr>
+<div>
+    <div style="float:left">
+    	    	    </div>
+    <div style="float:right;text-align:right;font-size:10px;">
+    	Created Fri 14 Jun 2013  4:14 PM PDT (UTC -0700)<br>
+    	Last Modified Fri 14 Jun 2013  5:36 PM PDT (UTC -0700)    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+        
+    
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/spark.js"></script>
+
+<script type="text/javascript">
+    // SET UP THE MULTITRACKER
+        window.logger = window.Log({level:"error"});
+        var parts = location.host.split(".");
+    while(parts.length > 2) { parts.shift(); }
+
+    window.multitracker = window.MultiTracker({logger:window.logger});
+    window.multitracker.register('204', window._204 = window._204 || []);
+    window.multitracker.register('ga', window._gaq = window._gaq || [], 'google');
+
+    // SET UP GA and 204
+    window._gaq.push(['_setAccount', 'UA-28377374-1']);
+    window._gaq.push(['_setDomainName', 'coursera.org']);
+    window._gaq.push(['_setAllowLinker', true]);  
+    window._gaq.push(['_trackPageview']);
+    
+    window._204.push({key:"pageview", val:{}});
+    window._204.push(["client", "spark"]);
+    window._204.push(["user", 1513511]);
+    window._204.push(["domain", "." + parts.join(".")]);
+
+    // override our multitracker queues with the ga queue when it is ready
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    
+      ga.onload = ga.onreadystatechange = function() {
+          ga.onreadystatechange = ga.onload = null;
+          window.multitracker.get('ga').queue = window._gaq;
+      };
+    })();
+
+    // override our multitracker queues with the 204 queue when it is ready
+    (function() {
+      var a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;
+      a.src = 'https://eventing.coursera.org/204.min.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(a, s);
+      a.onload = a.onreadystatechange = function() {
+          a.onreadystatechange = a.onload = null;
+          window.multitracker.get('204').queue = window._204;
+      };
+    })();
+</script>
+
+<script>
+  // Set up shared AB testing object
+  (function() {
+    window.ab = {};
+
+    // we want to share the 204 session cookie with the AB session cookie...
+    var sessionId = AB.makeSession("__204u", {expires:356, domain:"." + location.host});
+        var debug = true;
+    
+    window.ab.user = window.AB(1513511, "user", {debug:debug, tracker:window.multitracker, logger:window.logger});
+    window.ab.session = window.AB(sessionId, "session", {debug:debug, tracker:window.multitracker, logger:window.logger});
+
+    if(window.CourseraABExperiments.user) {
+        window.ab.user.addExperiments(window.CourseraABExperiments.user);
+        window.ab.user.runExperimentsOn("body");
+    }
+
+    if(window.CourseraABExperiments.session) {
+        window.ab.session.addExperiments(window.CourseraABExperiments.session);
+        window.ab.session.runExperimentsOn("body");
+    }
+  })();
+</script>
+
+
+    <script>
+      // Set up help widget
+      (function() {
+        $("[data-helpwidget]").each(function() {
+            window.HelpWidget(this, {tracker: window.multitracker});
+        });
+       })();
+ 
+        $("[data-readme]").each(function() {
+            window.ReadMe(this);
+        });
+    </script>
+
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/modal_focus.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/get_query_parameters.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/signature_track.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/generic/js/item_list.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/generic/js/navbar.js" type="text/javascript"></script>
+
+    
+    <script>
+     // Set up help widget
+      (function() {
+        $("[data-helpwidget]").each(function() {
+            window.HelpWidget(this, {tracker: window.multitracker});
+        });
+       })();
+    </script>
+
+    
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  
+  styleSheets: [],
+  styles: {},
+
+  jax: ["input/TeX"],
+  
+  extensions: ["tex2jax.js"],
+
+  preJax: null,
+  postJax: null,
+
+  preRemoveClass: "MathJax_Preview",
+
+  showProcessingMessages: true,
+
+  messageStyle: "none",
+  
+  displayAlign: "center",
+  displayIndent: "0em",
+  
+  delayStartupUntil: "none",
+
+  skipStartupTypeset: false,
+  
+  elements: [],
+  
+  tex2jax: {
+	    inlineMath: [
+	                 ['$$','$$'],      // uncomment this for standard TeX math delimiters
+	                 ['\\(','\\)']
+	                 ],
+
+	                 displayMath: [
+	                 ['\\[','\\]']
+	                 ],
+
+    skipTags: ["script","noscript","style","textarea","pre","code"],
+    ignoreClass: "tex2jax_ignore",
+    processClass: "tex2jax_process",
+    processEscapes: false,
+    processEnvironments: true,
+    preview: "TeX"
+    
+  },
+  
+  mml2jax: {
+    preview: "alttext"
+    
+  },
+  
+  jsMath2jax: {
+    preview: "TeX"
+    
+  },
+
+  TeX: {
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    Macros: {},
+
+    extensions: ["AMSmath.js", "AMSsymbols.js"]
+    
+  },
+
+  //============================================================================
+  //
+  //  These parameters control the MathML inupt jax.
+  //
+  MathML: {
+    //
+    //  This specifies whether to use TeX spacing or MathML spacing when the
+    //  HTML-CSS output jax is used.
+    //
+    useMathMLspacing: false
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the HTML-CSS output jax.
+  //
+  "HTML-CSS": {
+    
+    scale: 100,
+    
+    availableFonts: ["STIX","TeX"],
+    
+    preferredFont: "TeX",
+    
+    webFont: "TeX",
+    
+    imageFont: "TeX",
+    
+    undefinedFamily: "STIXGeneral,'Arial Unicode MS',serif",
+      
+    showMathMenu: true,
+
+    styles: {},
+    
+    tooltip: {
+      delayPost: 600,          // milliseconds delay before tooltip is posted after mouseover
+      delayClear: 600,         // milliseconds delay before tooltip is cleared after mouseout
+      offsetX: 10, offsetY: 5  // pixels to offset tooltip from mouse position
+    }
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the NativeMML output jax.
+  //
+  NativeMML: {
+
+    scale: 100,
+
+    showMathMenu: true,
+    showMathMenuMSIE: true,
+
+    styles: {}
+  },
+  
+  MathMenu: {
+    delay: 400,
+    
+    helpURL: "http://www.mathjax.org/help/user/",
+
+    showRenderer: true,
+    showFontMenu: false,
+    showContext:  false,
+
+    windowSettings: {
+      status: "no", toolbar: "no", locationbar: "no", menubar: "no",
+      directories: "no", personalbar: "no", resizable: "yes", scrollbars: "yes",
+      width: 100, height: 50
+    },
+    
+    styles: {}
+    
+  },
+
+  MMLorHTML: {
+    prefer: {
+      MSIE:    "MML",
+      Firefox: "MML",
+      Opera:   "HTML",
+      other:   "HTML"
+    }
+  }
+});
+</script>
+<script type="text/javascript">
+(function () {
+
+  function loadMathJax() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://duqnjvq4jwr55.cloudfront.net/2.1/MathJax.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+
+  window.loadOrRefreshMathJax = function(domId) {
+    if (window.MathJax) {
+      if (domId) {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, domId]);
+      } else {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      }
+    } else {
+      loadMathJax();
+    }
+  }
+})();
+</script>
+    
+    <script type="text/javascript">
+        var site_base_url = "https:\/\/www.coursera.org\/";
+        var site_static_asset_url = "https:\/\/dt5zaw6a98blc.cloudfront.net\/site-static\/";
+        var spark_class_short_name = "datasci";
+        var spark_class_id = 346;
+        var spark_class_url = "\/datasci-001";
+        var spark_signature_url = "https:\/\/class.coursera.org\/datasci-001\/signature\/";
+        
+        var course_strings_name = "Introduction to Data Science";
+        var student_full_name = "Foo Lim";
+    </script>
+
+    
+<script type="text/javascript">$(function() { loadOrRefreshMathJax();})</script>
+<script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/textbook/js/textbook_wiki.js"></script>
+
+</body>
+
+</html>

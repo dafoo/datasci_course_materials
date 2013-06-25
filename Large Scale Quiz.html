@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<title>Quiz | Introduction to Data Science</title>
+<link rel="stylesheet" href="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/css/spark.main.css" />
+<link rel="stylesheet" href="https://www.coursera.org/maestro/api/course/346/course.css">
+<link rel="icon" href="https://spark-public.s3.amazonaws.com/datasci/static/images/favicon.ico" />
+</head>
+
+<body>
+    
+    <a href="#course-page-content" class="hidden">Skip Navigation</a>
+    <div class="hidden">
+        This page features MathJax technology to render mathematical formulae.
+        If you are using a screen reader, please visit <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> to download the plugin for your browser. Please note that this is an Internet Explorer-only plugin at this time.
+    </div>
+
+    <h1 class="hidden">Introduction to Data Science</h1>
+
+    
+
+<div class="course-topbar container-fluid" role="banner">
+
+    <div class="row-fluid">
+        
+        <div class="span3">
+          <a href="https://www.coursera.org/" class="course-topbar-logo" data-if-linkable="add-referrer"></a>
+        </div>
+
+        <div class="course-topbar-nav-container span9" style="float:right;">
+            <h2 class="hidden">Top Navigation Bar</h2>
+
+            <ul class="course-topbar-nav-list">
+                <li class="course-topbar-nav-list-item">
+                  <a href="https://www.coursera.org/courses" data-if-linkable="add-referrer">Courses</a>
+                </li>
+
+                                
+                <li class="course-topbar-nav-list-item"
+                    tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="course-topbar-my"
+                    data-popup="#course-topbar-my" data-popup-bind-open="mouseenter" data-popup-close style="cursor:pointer;" data-popup-direction="se">
+                                        <a data-user-id="1513511">  
+                        Foo Lim 
+                        <i class="icon-caret-down"></i>
+                    </a>
+                </li>
+               
+                            </ul>
+        </div>
+    </div>
+
+    <div id="course-topbar-aboutus" class="course-topbar-sublist">
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/jobs" target="_new" data-if-linkable="add-referrer">Jobs</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/team" target="_new" data-if-linkable="add-referrer">Team</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/contact" target="_new" data-if-linkable="add-referrer">Contact Us</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/" target="_new" data-if-linkable="add-referrer">About Us</a>
+    </div>
+
+    <div id="course-topbar-my" class="course-topbar-sublist">
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/" target="_new">Courses</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/profile" target="_new">Profile</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/records" target="_new">Course Records</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/settings" target="_new">Settings</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/datasci-001/class/preferences">Course Preferences</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/datasci-001/auth/logout">Sign Out</a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<style type="text/css">
+ 
+
+
+</style>
+<div class="course-topbanner">
+  <div class="course-topbanner-university-logo">
+    <a href="https://www.coursera.org/uw" class="coursera-university-color" target="_blank" data-if-linkable="add-referrer" title="https://www.coursera.org/uw">
+      <img src="https://www.coursera.org/maestro/api/course/346/university_logo" alt="uw">
+    </a>
+  </div>
+
+  
+  <h1 class="course-topbanner-header">
+      <a class="course-topbanner-name coursera-university-color" href="https://class.coursera.org/datasci-001/class/index" data-if-linkable="modal-lock">
+        Introduction to Data Science      </a>
+      <br>
+      <span class="course-topbanner-instructor" style="">
+        by Bill  Howe      </span>
+  </h1>
+</div>
+    
+        <div class="container-fluid" style="position:relative;">
+        <div class="row-fluid">
+            <div id="course-page-sidebar" role="navigation">
+                <div class="course-navbar-container">
+	<a href="https://class.coursera.org/datasci-001/class/index"
+      >
+	<img src="https://www.coursera.org//maestro/api/course/346/logo" style="width: 210px;height: 112px;margin: -15px 0px 8px 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);" alt="Course Home Page">
+	</a>
+<h2 class="hidden">Side Navigation Bar</h2>
+<ul class="course-navbar-list">
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/class/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Home							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/lecture/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Video Lectures							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/forum/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Discussion Forums							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/assignment/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Programming Assignments							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/quiz/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Quizzes							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/human_grading/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Peer Assessments							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=OptionalRealWorldProject"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Optional Real-World Project							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=syllabus"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Syllabus							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=courselogistics"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Course Logistics							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=tableau_aws"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Running Tableau on AWS							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=ClassVirtualMachine"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Class Virtual Machine							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=GithubInstructions"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Github Instructions							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=PythonResources"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Python Resources							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=awssetup"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				AWS Setup							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/quiz/index?quiz_type=survey"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Surveys							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=aboutus"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				About Us							</a>
+						</li>
+	
+	
+		<li class="course-navbar-item">
+		<a href="https://share.coursera.org/wiki/index.php/datasci:Main" target="_blank" class="coursera-university-color" title="Open course wiki in new window">
+			Course Wiki
+			<span class="icon-share"></span>
+		</a>
+	</li>
+		
+		<li class="course-navbar-item">
+		<a href="http://www.meetup.com/Coursera/" target="_blank" class="coursera-university-color">
+			Join a Meetup
+			<span class="icon-share"></span>
+		</a>
+	</li>
+	
+    </ul>
+
+<ul style="list-style-type:none;margin-left: 10px;">
+  <li><a href="http://help.coursera.org" class="coursera-university-color" target="_blank" title="Open help articles in new window"><i class="icon-question-sign"></i> Help Articles</a></li>
+</ul>
+
+<ul style="list-style-type:none;margin-left: 10px;">
+	
+</ul>
+
+</div>
+            </div>
+            <div id="course-page-content" role="main">
+                                
+
+<h2 class="course-page-header">
+  <span>
+(Optional) Large-scale processing in the cloud  </span>
+  
+  <a class="coursera-reporter-link" target="_blank" href="https://class.coursera.org/datasci-001/class/reporter?url=http%3A%2F%2Fclass.coursera.org%2Fdatasci-001%2Fquiz%2Fattempt%3Fquiz_id%3D159&area=quiz&title=%28Optional%29+Large-scale+processing+in+the+cloud">
+     Report a problem
+  </a>
+</h2>
+
+
+<a data-coursera-admin-helpwidget-link rel="help" href="http://support.coursera.org/customer/portal/topics/237872-quizzes/articles" title="Quiz documentation" style="display:none;">Learn more</a>
+<a data-coursera-admin-helpwidget-link rel="discuss" href='https://class.coursera.org/mooc/forum/tag?name=Quiz&forum_id=7' style='display:none;'>Discuss</a>
+
+
+<p class="course-quiz-intro-message">The <strong>due date</strong> for this quiz is <strong>Wed 26 Jun 2013  9:00 PM PDT (UTC -0700)</strong>.</p>
+
+
+
+
+
+
+
+            <form method="post" id="quiz_form">
+    
+        <div class="course-quiz-preamble">
+        <body>
+<h1> <span style="color: red"> We cannot reimburse you for any charges </span></h1>
+<h2>Terminating an AWS cluster</h2>
+
+    <p>When you are done running Pig scripts, make sure to <strong>ALSO</strong> terminate
+        your job flow. This is a step that you need to do <strong>in addition to </strong>stopping
+        pig and Hadoop (if necessary).</p>
+    <ol>
+        <li>Go to the <a href="https://console.aws.amazon.com/elasticmapreduce/home"
+            target="_blank"> Management Console.</a>
+
+        </li>
+        <li>Select the job in the list.</li>
+        <li>Click the Terminate button (it should be right below "Your Elastic MapReduce
+            Job Flows").</li>
+        <li>Wait for a while (may take minutes) and recheck until the job state becomes
+            TERMINATED.</li>
+    </ol>
+    <h1> <span style="color:red"> If you fail to terminate
+        your job and only close the browser, or log off AWS, your AWS will continue
+        to run, and AWS will continue to charge your credit card: for hours, days, and weeks. Make sure you
+        don't leave the console until you have confirmation that the job is terminated.</h1>
+    
+<h2> Notes </h2>
+
+<p> This quiz will be very difficult from Windows and the instructions assume you have access to a Linux command line. </p>
+
+<p> The quiz should cost no more than 5-10 dollars if you only use small aws instances </p>
+
+<h2>Problem 0: Setup your Pig Cluster</h2>
+<ol>
+<li><p> Follow <a href="https://class.coursera.org/datasci-001/wiki/view?page=awssetup" target="_self">these instructions</a> to setup the cluster and .  NOTE: It will take you a good <strong>60 minutes</strong> to go through all these instructions without even trying to run example.pig at the end. But they are worth it. You are learning how to use the Amazon cloud, which is by far the most popular cloud today! At the end, the instructions will refer to <em>example.pig</em>. This is the name of the sample program that we will run in the next step.</li>
+<li> You will find example.pig in the <a href="https://github.com/uwescience/datasci_course_materials">course materials repo</a>.
+  example.pig is a
+  Pig Latin script that loads and parses the billion triple dataset that we will use in this assignment into triples:
+  (subject, predicate, object). Then it groups the triples by their
+  object attribute and sorts them in descending order based on the count
+  of tuple in each group.</li>
+<li><p>Follow the README.txt: it provides more information on how to run the sample program called example.pig. </li>
+<li> There is nothing to turn in for Problem 0</li>
+</ol>
+
+<h2>Useful Links</h2>
+<p>
+<a href="http://pig.apache.org/docs/r0.7.0/piglatin_ref2.html"
+target="_blank">Pig Latin reference</a>
+</p>
+<p>
+<a href="http://stackoverflow.com/questions/9900761/pig-how-to-count-a-number-of-rows-in-alias"
+target="_blank">Counting rows in an alias</a>
+</p>
+
+<h2>Quiz Description</h2>
+<p>As we discussed in class, we live in a "big data" era: our society is generating data at an unprecedented scale and rate. In fact, we are generating so much data that we are unable to take advantage of most of that data. This is quite unfortunate.</p>
+<p>A large fraction of this data takes the form of gigantic graphs: A social network is a graph where vertices represent people and edges represent friendships. The Web is a graph where vertices represent pages and edges represent hyperlinks between pages. These graphs are very large and are difficult to study. One of the key challenges is that many graph algorithms are difficult to parallelize.</p>
+<p>In this assignment, we will perform some basic analysis over one such graph. This graph is representative of other important graphs. The graph that we will study comes from the <a href="http://km.aifb.kit.edu/projects/btc-2010/" target="_new">billion triple dataset</a>. This is an RDF dataset that contains a billion (add or take a few) triples from the Semantic Web. Some Webpages on the Web have a machine-readable description of their semantics stored as RDF triples: our dataset was obtained by a crawler that extracted all RDF triples from the Web.</p>
+<p>RDF data is represented in triples of the form:</p>
+<pre>		subject  predicate  object  [context]
+</pre> 
+<p>The [context] is not part of the triple, but is sometimes added to tell where the data is coming from.    For example, file <code>btc-2010-chunk-200</code> contains the two &quot;triples&quot; (they are actually &quot;quads&quot; because they have the context too):</p>
+<pre>&lt;http://www.last.fm/user/ForgottenSound&gt; &lt;http://xmlns.com/foaf/0.1/nick&gt; &quot;ForgottenSound&quot; &lt;http://rdf.opiumfield.com/lastfm/friends/life-exe&gt; .<br>&lt;http://dblp.l3s.de/d2r/resource/publications/journals/cg/WestermannH96&gt; &lt;http://xmlns.com/foaf/0.1/maker&gt; &lt;http://dblp.l3s.de/d2r/resource/authors/Birgit_Westermann&gt; &lt;http://dblp.l3s.de/d2r/data/publications/journals/cg/WestermannH96&gt; .
+</pre>
+<p><br> 
+The first says that Webpage &lt;http://www.last.fm/user/ForgottenSound&gt; has the nickname &quot;ForgottenSound&quot;; the second describes the maker of another webpage. <code>foaf</code> stands for <em>Friend of a Friend.</em> Confused ? You don't need to know what they mean; some of the many triples refer to music, http://dbtune.org, others refer to company relationships, etc. For our purpose, these triples are just a large collection of triples. There were 317 2GB files in the <a href="http://km.aifb.kit.edu/projects/btc-2010/" target="_new">billion triple dataset</a> when we downloaded it. We uploaded them to Amazon's Web Services in S3: there were some errors, and only 251 uploaded correctly, for a total of about 550 GB of data.</p>
+
+<p>This graph is similar in size to the <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.33.44&rep=rep1&type=pdf">web graph</a>.
+  
+  As part of this assignment, we will compute the out-degree of each node in the graph. The out-degree of a node is the number of edges coming out of the node. This is an important property. If a graph is random, the out-degree of nodes will follow an exponential distribution (i.e., the number of nodes with degree d should be exp(- c*d) for some constant c). We will write the script in Problem 2, where we will run it on a small data sample. We will run the script on the big graph in Problem 4. What is very interesting is that we will find the distribution of node out-degrees
+  to follow a power law   (1/d^k for some constant k and it will look roughly like a straight-line on a graph with logarithmic scales on both the x and y axes) instead of an exponential distribution. If you look at Figures 2 and 3 in <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.33.44&rep=rep1&type=pdf">this paper</a>, you will find that the degrees of web pages on the web, in general, follow a similar power law distribution. This is very interesting because it means that the Web and the semantic Web cannot be modeled as random graphs. They need a different theoretical model. </p>
+<p>In Problem 3, we will look for paths of length 2 in a sub-graph of our big graph. This is a simple version of more complex algorithms that try to measure the diameter of a graph or try to extract other related properties.
+  
+We will do all this on a very real 0.5TB graph! How cool will that look on your resume: "Analyzed properties of a 0.5TB (a billion vertices) graph using Pig/Hadoop". </p>
+<p>You will access the following datasets in S3, throught pig (using the LOAD command -- see example.pig)</p>
+<p><span class="style2">s3n://uw-cse-344-oregon.aws.amazon.com/cse344-test-file -- 250KB</span>. This is used in example.pig. Always use this file for debugging your scripts first! </p>
+<p><span class="style3">s3n://uw-cse-344-oregon.aws.amazon.com/btc-2010-chunk-000 -- 2GB</span>. You will use this dataset in questions 1, 2, 3..</p>
+<p><span class="style5">s3n://uw-cse-344-oregon.aws.amazon.com -- 0.5TB</span>. This directory contains 251 files btc-2010-chunk-000 to btc-2010-chunk-317 (since only 251 of the original 318 files uploaded correctly). You will use this in  problem 4.</p>
+
+<p>It is not necessary for the assignment, but if you want to inspect the files directly, you can access them over the Internet using urls of the following form (Note that accessing the 0.5TB file in this way is not recommended!):</p>
+<pre><a href="http://uw-cse-344-oregon.aws.amazon.com.s3.amazonaws.com/btc-2010-chunk-000">http://uw-cse-344-oregon.aws.amazon.com.s3.amazonaws.com/btc-2010-chunk-000</a></pre>
+<pre><a href="http://uw-cse-344-oregon.aws.amazon.com.s3.amazonaws.com/cse344-test-file">http://uw-cse-344-oregon.aws.amazon.com.s3.amazonaws.com/cse344-test-file</a></pre>
+<p/>
+
+<br>
+<h2 id="problem1">Problem 1:  Getting started with Pig on chunk-000</h2>
+<p> Modify <tt>example.pig</tt> to use the file <tt>uw-cse-344-oregon.aws.amazon.com/btc-2010-chunk-000</tt> instead of <tt>uw-cse-344-oregon.aws.amazon.com/cse344-test-file</tt>. Run on an AWS cluster with <strong>10 small nodes</strong>.
+  (also see hints below). </p>
+
+<p> <b>1.1</b> How many MapReduce jobs are generated by
+  example.pig? </p>
+<p> <b>1.2</b> How many reduce tasks are within the first
+  MapReduce job? How many reduce tasks are within later MapReduce jobs? </p>
+<p> <b>1.3</b> How long does each job take? How long does the entire script take? </p>
+<p> <b>1.4</b> What is the schema of the tuples after each of the following commands in example.pig?</p>
+<ul>
+  <li>After the command <tt>ntriples
+    = ...</tt> </li>
+  <li>After the command <tt>objects
+      = ...</tt></li>
+  <li>After the command <tt>count_by_object
+        = ...</tt></li>
+</ul>
+<p> <b>Hint 1</b>: <a href="https://class.coursera.org/datasci-001/wiki/view?page=awssetup">Use the job tracker</a> to see the number of map and reduce tasks for your MapReduce jobs. </p>
+<p> <b> Hint 2:</b> To see the schema for intermediate
+  results, you can use Pig's interactive command line client <tt>grunt</tt>,
+  which you can launch by running Pig without specifying an input script
+  on the command line. When using <tt>grunt</tt>, a command that you may want to know about is <a href="http://pig.apache.org/docs/r0.7.0/piglatin_ref2.html#DESCRIBE"><tt>describe</tt></a> .
+  To see a list of other commands, type <tt>help</tt>.</p>
+<p> <b>What you need to turn in:</b><br>
+  <span style="color: red"> How many records are there in count_by_object? DON'T FORGET TO SHUTDOWN YOUR INSTANCES!</span></p>
+<h2>&nbsp;</h2>
+<h2>Problem 2A: Compute a Histogram on  cse344-test-file</h2>
+<p><strong>Using the 'cse344-test-file' file</strong>, write a Pig script that groups tuples by the
+  subject column, and creates/stores histogram data showing the distribution of counts per subject, then generate a scatter-plot of this histogram. The histogram consists of:</p>
+<ul>
+  <li>The x-axis is the counts associated with the subjects, and </li>
+  <li>The y-axis is the total number of subjects associated with each particular count.</li>
+</ul>
+<p> So, for each point (x,y) that we generate, we mean to say that y subjects each
+  had x tuples associated with them after we group by subject.
+  </p>
+<p> A few comments to help you get started: </p>
+<ul>
+  <li>We expect that your script will (1) group the input data by subject and count the tuples associated with each subject then (2) group the results by these intermediate counts (x-axis values) and compute the final counts (y-axis values). </li>
+  <li>To get more familiar with the Pig Latin commands, we suggest that
+    you also take a look at the <a href="http://pig.apache.org/docs/r0.7.0/piglatin_ref2.html" 
+target="_blank">Pig Latin Reference</a>. </li>
+</ul>
+<p><strong>DEBUGGING</strong>:</p>
+<ul>
+  <li>Since you are using the small test file in this question, you can run a small, <strong>1-node cluster</strong>. </li>
+  <li>In this question, we are debugging the script. The output of this question is thus not going to be terribly interesting. In fact, your scatterplot should  only have two points: (1,1) and (3,333). </li>
+  <li>To debug a Pig Latin script, try to run Pig as follows:</li>
+
+<blockquote>
+  <pre>pig -x local  </pre>
+  <p>Run all commands as you normally would, except for store. You need to store your results locally:</p>
+  <pre>store my_final_output into '/tmp/finaloutput' using PigStorag()</pre>
+</blockquote>
+<li>Once you are done debugging in local mode, try to run your script by issuing real MapReduce jobs. That is run with &quot;pig&quot; instead of &quot;pig -x local&quot; (remember to change the store command). </li>
+</ul>
+<p> <b>What you need to turn in:</b> <br>
+  <span style="color: red"> How many (x, y) points are generated in the histogram? DON'T FORGET TO SHUTDOWN YOUR INSTANCES!</span></p>
+<h2>Problem 2B: Compute a Histogram on  chunk-000</h2>
+<p>Now run your script from Problem 2A on 'btc-2010-chunk-000' file. Please use a <strong>5-node cluster</strong> of small instances. </p>
+<p>Note: this script took about 21 minutes with 5 nodes.</p>
+<p><b>What you need to turn in:</b><br>
+  <span style="color: red"> How many (x, y) points are generated in the histogram? DON'T FORGET TO SHUTDOWN YOUR INSTANCES!</span></p>
+<h2>&nbsp;</h2>
+<h2>Problem 3: Compute a Join on chunk-000</h2>
+<p>In  this problem we will consider the subgraph consisting of triples whose subject matches rdfabout.com: for that, filter on <code>subject matches '.*rdfabout\\.com.*'</code>. Find all chains of lengths 2 in this subgraph. More precisely, return all sextuples (subject, predicate, object, subject2, predicate2, object2) where object=subject2. 
+<p>Note: Newer versions of Pig will automatically drop the duplicate column in the join output.In that case, you do NOT need to return the sixth column.
+<p>Suggestions on how to proceed:
+<ul>
+<li>First filter the data so you only have tuples whose subject matches 'rdfabout.com'.</li>
+<li>Make another copy of the filtered collection (it's best to re-label the subject,
+predicate, and objects, for example to subject2, predicate2, object2).</li>
+<li>Now join the two copies:
+<ul>
+<li>the first copy of the 'rdfabout.com' collection should match on object.</li>
+<li>the second copy of the 'rdfabout.com' collection should match on subject2.</li>
+</ul>
+</li>
+<li>Remove duplicate tuples from the result of the join</li>
+</ul>
+<p>As above, first debug your script for this problem using the test file. Once your script is debugged, then run it on the bigger file 'btc-2010-chunk-000'. While debugging on the test file, make the following two changes: </p>
+<p>1) Use the following filter </p>
+<p><code>subject matches '.*business.*'</code> </p>
+<p>2) Change the join predicate to be <code>subject=subject2</code>
+<p>Otherwise, you will not get any results. 
+</p>
+<p>Note: this script took about 18 minutes with 10 small nodes.</p>
+<p> <b>What you need to turn in:</b><br>
+  <span style="color: red"> How many records are generated by the join for the cse-344-test-file dataset? For the btc-2010-chunk-000 dataset? DON'T FORGET TO SHUTDOWN YOUR INSTANCES!</span></p>
+<h2>&nbsp;</h2>
+<h2>Problem 4 : Compute a Histogram on the Entire Dataset</h2>
+<p>Compute the histogram in Problem 2 on the <strong>entire 0.5TB dataset</strong>. Use as many nodes as you like up to 19 small nodes.</p>
+<p>You need to modify  the load instruction to:</p>
+<pre>raw = LOAD 's3n://uw-cse-344-oregon.aws.amazon.com/btc-2010-chunk-*' USING TextLoader as (line:chararray);</pre>
+<p>Note: this query will take more than <em><strong>4 hours to run</strong></em>. Plan accordingly, and monitor carefully: if anything looks wrong, abort, fix, restart.</p>
+<p>When you are done, appreciate how <em>relatively</em> quick and easy it was to analyze a 0.5TB graph! </p>
+<p> <b>What you need to turn in:</b><br>
+  <span style="color: red"> How many (x, y) points are generated in the histogram? DON'T FORGET TO SHUTDOWN YOUR INSTANCES!</span></p>
+    </div>
+    
+            
+<div class="course-quiz-honor-code">
+    <label class="checkbox">
+        <input type="checkbox">
+        In accordance with the Coursera Honor Code, I (Foo Lim) certify that the answers here are my own work.        <span class="course-quiz-honor-code-thanks" style="display:none;">Thank you!</span>
+    </label>
+
+</div>    
+    <div class="course-quiz-question-body">
+<h3 class="course-quiz-question-number">Question 1</h3>
+<div style="float:none;text-align:left;width:100%"> <div class="course-quiz-question-text">How many records are there in count_by_object?</div>
+</div>
+<label for="gensym_51c8e19c77fbe" class="hidden">Answer for Question 1</label><div class="course-quiz-options"></div>
+<textarea id="gensym_51c8e19c77fbe" class="course-quiz-input" name="answer[32265b3c03d8885419dc44ce6e62cbae][answer]"></textarea>
+</div><div class="course-quiz-question-body">
+<h3 class="course-quiz-question-number">Question 2</h3>
+<div style="float:none;text-align:left;width:100%"> <div class="course-quiz-question-text">How many (x, y) points are generated in the histogram for problem 2A?</div>
+</div>
+<label for="gensym_51c8e19c79be1" class="hidden">Answer for Question 2</label><div class="course-quiz-options"></div>
+<textarea id="gensym_51c8e19c79be1" class="course-quiz-input" name="answer[6e618015bcafd8cf7720460c3a9f4246][answer]"></textarea>
+</div><div class="course-quiz-question-body">
+<h3 class="course-quiz-question-number">Question 3</h3>
+<div style="float:none;text-align:left;width:100%"> <div class="course-quiz-question-text">How many (x, y) points are generated in the histogram for problem 2B?</div>
+</div>
+<label for="gensym_51c8e19c7ba87" class="hidden">Answer for Question 3</label><div class="course-quiz-options"></div>
+<textarea id="gensym_51c8e19c7ba87" class="course-quiz-input" name="answer[de53cb6b6a0780d3240be471523e48fa][answer]"></textarea>
+</div><div class="course-quiz-question-body">
+<h3 class="course-quiz-question-number">Question 4</h3>
+<div style="float:none;text-align:left;width:100%"> <div class="course-quiz-question-text">How many records are generated by the join for the cse-344-test-file dataset?</div>
+</div>
+<label for="gensym_51c8e19c7d74d" class="hidden">Answer for Question 4</label><div class="course-quiz-options"></div>
+<textarea id="gensym_51c8e19c7d74d" class="course-quiz-input" name="answer[7d995d1e56d203b429c4cf7bec20f7d1][answer]"></textarea>
+</div><div class="course-quiz-question-body">
+<h3 class="course-quiz-question-number">Question 5</h3>
+<div style="float:none;text-align:left;width:100%"> <div class="course-quiz-question-text">How many records are generated by the join for the btc-2010-chunk-000 dataset?</div>
+</div>
+<label for="gensym_51c8e19c7f536" class="hidden">Answer for Question 5</label><div class="course-quiz-options"></div>
+<textarea id="gensym_51c8e19c7f536" class="course-quiz-input" name="answer[fda285f99e3efa44b9837d103a81c420][answer]"></textarea>
+</div><div class="course-quiz-question-body">
+<h3 class="course-quiz-question-number">Question 6</h3>
+<div style="float:none;text-align:left;width:100%"> <div class="course-quiz-question-text">How many (x, y) points are generated in the histogram for problem 4?</div>
+</div>
+<label for="gensym_51c8e19c810f1" class="hidden">Answer for Question 6</label><div class="course-quiz-options"></div>
+<textarea id="gensym_51c8e19c810f1" class="course-quiz-input" name="answer[a2f47b8ff9f0fc92d4871f4ad8b47b0a][answer]"></textarea>
+</div>
+            
+<div class="course-quiz-honor-code">
+    <label class="checkbox">
+        <input type="checkbox">
+        In accordance with the Coursera Honor Code, I (Foo Lim) certify that the answers here are my own work.        <span class="course-quiz-honor-code-thanks" style="display:none;">Thank you!</span>
+    </label>
+
+</div>    
+            <div class="course-quiz-submit-button-container">
+        <input type="hidden" name="__csrf-token" value="0LTpOsGqGN5nPczf7Hv6">
+        <input class="btn btn-success" type="submit" name="submit_answers" 
+               value="Submit Answers" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="btn btn-primary" type="submit" name="save_answers" 
+               value="Save Answers" />
+
+        <div class="course-quiz-honor-code-status" style="margin-top:10px; display:none;">You cannot submit your work until you agree to the Honor Code. Thanks!</div>
+
+    </div>
+    
+    
+
+    </form>
+
+
+            </div>
+        </div>
+    </div>
+        
+    
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/spark.js"></script>
+
+<script type="text/javascript">
+    // SET UP THE MULTITRACKER
+        window.logger = window.Log({level:"error"});
+        var parts = location.host.split(".");
+    while(parts.length > 2) { parts.shift(); }
+
+    window.multitracker = window.MultiTracker({logger:window.logger});
+    window.multitracker.register('204', window._204 = window._204 || []);
+    window.multitracker.register('ga', window._gaq = window._gaq || [], 'google');
+
+    // SET UP GA and 204
+    window._gaq.push(['_setAccount', 'UA-28377374-1']);
+    window._gaq.push(['_setDomainName', 'coursera.org']);
+    window._gaq.push(['_setAllowLinker', true]);  
+    window._gaq.push(['_trackPageview']);
+    
+    window._204.push({key:"pageview", val:{}});
+    window._204.push(["client", "spark"]);
+    window._204.push(["user", 1513511]);
+    window._204.push(["domain", "." + parts.join(".")]);
+
+    // override our multitracker queues with the ga queue when it is ready
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    
+      ga.onload = ga.onreadystatechange = function() {
+          ga.onreadystatechange = ga.onload = null;
+          window.multitracker.get('ga').queue = window._gaq;
+      };
+    })();
+
+    // override our multitracker queues with the 204 queue when it is ready
+    (function() {
+      var a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;
+      a.src = 'https://eventing.coursera.org/204.min.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(a, s);
+      a.onload = a.onreadystatechange = function() {
+          a.onreadystatechange = a.onload = null;
+          window.multitracker.get('204').queue = window._204;
+      };
+    })();
+</script>
+
+<script>
+  // Set up shared AB testing object
+  (function() {
+    window.ab = {};
+
+    // we want to share the 204 session cookie with the AB session cookie...
+    var sessionId = AB.makeSession("__204u", {expires:356, domain:"." + location.host});
+        var debug = true;
+    
+    window.ab.user = window.AB(1513511, "user", {debug:debug, tracker:window.multitracker, logger:window.logger});
+    window.ab.session = window.AB(sessionId, "session", {debug:debug, tracker:window.multitracker, logger:window.logger});
+
+    if(window.CourseraABExperiments.user) {
+        window.ab.user.addExperiments(window.CourseraABExperiments.user);
+        window.ab.user.runExperimentsOn("body");
+    }
+
+    if(window.CourseraABExperiments.session) {
+        window.ab.session.addExperiments(window.CourseraABExperiments.session);
+        window.ab.session.runExperimentsOn("body");
+    }
+  })();
+</script>
+
+
+    <script>
+      // Set up help widget
+      (function() {
+        $("[data-helpwidget]").each(function() {
+            window.HelpWidget(this, {tracker: window.multitracker});
+        });
+       })();
+ 
+        $("[data-readme]").each(function() {
+            window.ReadMe(this);
+        });
+    </script>
+
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/modal_focus.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/get_query_parameters.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/signature_track.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/generic/js/item_list.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/generic/js/navbar.js" type="text/javascript"></script>
+
+    
+    <script>
+     // Set up help widget
+      (function() {
+        $("[data-helpwidget]").each(function() {
+            window.HelpWidget(this, {tracker: window.multitracker});
+        });
+       })();
+    </script>
+
+    
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  
+  styleSheets: [],
+  styles: {},
+
+  jax: ["input/TeX"],
+  
+  extensions: ["tex2jax.js"],
+
+  preJax: null,
+  postJax: null,
+
+  preRemoveClass: "MathJax_Preview",
+
+  showProcessingMessages: true,
+
+  messageStyle: "none",
+  
+  displayAlign: "center",
+  displayIndent: "0em",
+  
+  delayStartupUntil: "none",
+
+  skipStartupTypeset: false,
+  
+  elements: [],
+  
+  tex2jax: {
+	    inlineMath: [
+	                 ['$$','$$'],      // uncomment this for standard TeX math delimiters
+	                 ['\\(','\\)']
+	                 ],
+
+	                 displayMath: [
+	                 ['\\[','\\]']
+	                 ],
+
+    skipTags: ["script","noscript","style","textarea","pre","code"],
+    ignoreClass: "tex2jax_ignore",
+    processClass: "tex2jax_process",
+    processEscapes: false,
+    processEnvironments: true,
+    preview: "TeX"
+    
+  },
+  
+  mml2jax: {
+    preview: "alttext"
+    
+  },
+  
+  jsMath2jax: {
+    preview: "TeX"
+    
+  },
+
+  TeX: {
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    Macros: {},
+
+    extensions: ["AMSmath.js", "AMSsymbols.js"]
+    
+  },
+
+  //============================================================================
+  //
+  //  These parameters control the MathML inupt jax.
+  //
+  MathML: {
+    //
+    //  This specifies whether to use TeX spacing or MathML spacing when the
+    //  HTML-CSS output jax is used.
+    //
+    useMathMLspacing: false
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the HTML-CSS output jax.
+  //
+  "HTML-CSS": {
+    
+    scale: 100,
+    
+    availableFonts: ["STIX","TeX"],
+    
+    preferredFont: "TeX",
+    
+    webFont: "TeX",
+    
+    imageFont: "TeX",
+    
+    undefinedFamily: "STIXGeneral,'Arial Unicode MS',serif",
+      
+    showMathMenu: true,
+
+    styles: {},
+    
+    tooltip: {
+      delayPost: 600,          // milliseconds delay before tooltip is posted after mouseover
+      delayClear: 600,         // milliseconds delay before tooltip is cleared after mouseout
+      offsetX: 10, offsetY: 5  // pixels to offset tooltip from mouse position
+    }
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the NativeMML output jax.
+  //
+  NativeMML: {
+
+    scale: 100,
+
+    showMathMenu: true,
+    showMathMenuMSIE: true,
+
+    styles: {}
+  },
+  
+  MathMenu: {
+    delay: 400,
+    
+    helpURL: "http://www.mathjax.org/help/user/",
+
+    showRenderer: true,
+    showFontMenu: false,
+    showContext:  false,
+
+    windowSettings: {
+      status: "no", toolbar: "no", locationbar: "no", menubar: "no",
+      directories: "no", personalbar: "no", resizable: "yes", scrollbars: "yes",
+      width: 100, height: 50
+    },
+    
+    styles: {}
+    
+  },
+
+  MMLorHTML: {
+    prefer: {
+      MSIE:    "MML",
+      Firefox: "MML",
+      Opera:   "HTML",
+      other:   "HTML"
+    }
+  }
+});
+</script>
+<script type="text/javascript">
+(function () {
+
+  function loadMathJax() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://duqnjvq4jwr55.cloudfront.net/2.1/MathJax.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+
+  window.loadOrRefreshMathJax = function(domId) {
+    if (window.MathJax) {
+      if (domId) {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, domId]);
+      } else {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      }
+    } else {
+      loadMathJax();
+    }
+  }
+})();
+</script>
+    
+    <script type="text/javascript">
+        var site_base_url = "https:\/\/www.coursera.org\/";
+        var site_static_asset_url = "https:\/\/dt5zaw6a98blc.cloudfront.net\/site-static\/";
+        var spark_class_short_name = "datasci";
+        var spark_class_id = 346;
+        var spark_class_url = "\/datasci-001";
+        var spark_signature_url = "https:\/\/class.coursera.org\/datasci-001\/signature\/";
+        
+        var course_strings_name = "Introduction to Data Science";
+        var student_full_name = "Foo Lim";
+    </script>
+
+    
+<script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/quiz/js/quiz_timer.js"></script>
+<script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/get_query_parameters.js?version=20120326"></script>
+<script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/quiz/js/quiz_attempt.js?version=20130416"></script>
+<script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/quiz/js/latex_preview.js"></script>
+<script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/quiz/js/db_class.js"></script>
+<script>initRunQuery(".test_query", "run_query");</script>
+<script type="text/javascript">$(function() { loadOrRefreshMathJax();})</script>
+
+</body>
+
+</html>

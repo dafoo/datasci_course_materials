@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<title>Wiki - AWS Setup | Introduction to Data Science</title>
+<link rel="stylesheet" href="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/css/spark.main.css" />
+<link rel="stylesheet" href="https://www.coursera.org/maestro/api/course/346/course.css">
+<link rel="icon" href="https://spark-public.s3.amazonaws.com/datasci/static/images/favicon.ico" />
+</head>
+
+<body>
+    
+    <a href="#course-page-content" class="hidden">Skip Navigation</a>
+    <div class="hidden">
+        This page features MathJax technology to render mathematical formulae.
+        If you are using a screen reader, please visit <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> to download the plugin for your browser. Please note that this is an Internet Explorer-only plugin at this time.
+    </div>
+
+    <h1 class="hidden">Introduction to Data Science</h1>
+
+    
+
+<div class="course-topbar container-fluid" role="banner">
+
+    <div class="row-fluid">
+        
+        <div class="span3">
+          <a href="https://www.coursera.org/" class="course-topbar-logo" data-if-linkable="add-referrer"></a>
+        </div>
+
+        <div class="course-topbar-nav-container span9" style="float:right;">
+            <h2 class="hidden">Top Navigation Bar</h2>
+
+            <ul class="course-topbar-nav-list">
+                <li class="course-topbar-nav-list-item">
+                  <a href="https://www.coursera.org/courses" data-if-linkable="add-referrer">Courses</a>
+                </li>
+
+                                
+                <li class="course-topbar-nav-list-item"
+                    tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="course-topbar-my"
+                    data-popup="#course-topbar-my" data-popup-bind-open="mouseenter" data-popup-close style="cursor:pointer;" data-popup-direction="se">
+                                        <a data-user-id="1513511">  
+                        Foo Lim 
+                        <i class="icon-caret-down"></i>
+                    </a>
+                </li>
+               
+                            </ul>
+        </div>
+    </div>
+
+    <div id="course-topbar-aboutus" class="course-topbar-sublist">
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/jobs" target="_new" data-if-linkable="add-referrer">Jobs</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/team" target="_new" data-if-linkable="add-referrer">Team</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/contact" target="_new" data-if-linkable="add-referrer">Contact Us</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/" target="_new" data-if-linkable="add-referrer">About Us</a>
+    </div>
+
+    <div id="course-topbar-my" class="course-topbar-sublist">
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/" target="_new">Courses</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/profile" target="_new">Profile</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/records" target="_new">Course Records</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/settings" target="_new">Settings</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/datasci-001/class/preferences">Course Preferences</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/datasci-001/auth/logout">Sign Out</a>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<style type="text/css">
+ 
+
+
+</style>
+<div class="course-topbanner">
+  <div class="course-topbanner-university-logo">
+    <a href="https://www.coursera.org/uw" class="coursera-university-color" target="_blank" data-if-linkable="add-referrer" title="https://www.coursera.org/uw">
+      <img src="https://www.coursera.org/maestro/api/course/346/university_logo" alt="uw">
+    </a>
+  </div>
+
+  
+  <h1 class="course-topbanner-header">
+      <a class="course-topbanner-name coursera-university-color" href="https://class.coursera.org/datasci-001/class/index" data-if-linkable="modal-lock">
+        Introduction to Data Science      </a>
+      <br>
+      <span class="course-topbanner-instructor" style="">
+        by Bill  Howe      </span>
+  </h1>
+</div>
+    
+        <div class="container-fluid" style="position:relative;">
+        <div class="row-fluid">
+            <div id="course-page-sidebar" role="navigation">
+                <div class="course-navbar-container">
+	<a href="https://class.coursera.org/datasci-001/class/index"
+      >
+	<img src="https://www.coursera.org//maestro/api/course/346/logo" style="width: 210px;height: 112px;margin: -15px 0px 8px 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);" alt="Course Home Page">
+	</a>
+<h2 class="hidden">Side Navigation Bar</h2>
+<ul class="course-navbar-list">
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/class/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Home							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/lecture/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Video Lectures							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/forum/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Discussion Forums							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/assignment/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Programming Assignments							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/quiz/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Quizzes							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/human_grading/index"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Peer Assessments							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=OptionalRealWorldProject"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Optional Real-World Project							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=syllabus"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Syllabus							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=courselogistics"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Course Logistics							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=tableau_aws"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Running Tableau on AWS							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=ClassVirtualMachine"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Class Virtual Machine							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=GithubInstructions"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Github Instructions							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=PythonResources"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Python Resources							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=awssetup"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				AWS Setup							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/quiz/index?quiz_type=survey"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				Surveys							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/datasci-001/wiki/view?page=aboutus"  data-if-linkable="modal-lock,gray,lock-icon" class="coursera-university-color">
+				
+				About Us							</a>
+						</li>
+	
+	
+		<li class="course-navbar-item">
+		<a href="https://share.coursera.org/wiki/index.php/datasci:Main" target="_blank" class="coursera-university-color" title="Open course wiki in new window">
+			Course Wiki
+			<span class="icon-share"></span>
+		</a>
+	</li>
+		
+		<li class="course-navbar-item">
+		<a href="http://www.meetup.com/Coursera/" target="_blank" class="coursera-university-color">
+			Join a Meetup
+			<span class="icon-share"></span>
+		</a>
+	</li>
+	
+    </ul>
+
+<ul style="list-style-type:none;margin-left: 10px;">
+  <li><a href="http://help.coursera.org" class="coursera-university-color" target="_blank" title="Open help articles in new window"><i class="icon-question-sign"></i> Help Articles</a></li>
+</ul>
+
+<ul style="list-style-type:none;margin-left: 10px;">
+	
+</ul>
+
+</div>
+            </div>
+            <div id="course-page-content" role="main">
+                                
+
+<h2 class="course-page-header">
+    AWS Setup    <a class="coursera-reporter-link" target="_blank" href="https://class.coursera.org/datasci-001/class/reporter?url=http%3A%2F%2Fclass.coursera.org%2Fdatasci-001%2Fwiki%2Fview%3Fpage%3Dawssetup&area=pages&title=AWS+Setup">
+      Report a problem
+    </a>
+    <a data-coursera-admin-helpwidget-link rel="help" href="http://support.coursera.org/customer/portal/articles/823871-adding-course-pages" title="Adding course pages" style="display:none;">Learn more.</a><a data-coursera-admin-helpwidget-link rel="discuss" href='https://class.coursera.org/mooc/forum/tag?name=CoursePage&forum_id=7' style='display:none;'>Discuss</a>
+</h2>
+
+<div id="internal_html_page_content">
+
+<h2>Setting up your AWS account </h2>
+
+<p>Amazon will ask you for your credit card information during the
+    setup process. You will be charged for using their services. You should not have to spend more than 5-10 dollars.</p>
+<ol>
+<li>Go to <a href="http://aws.amazon.com/" title="Link: http://aws.amazon.com/">http://aws.amazon.com/</a>
+and sign
+        up:
+        <br><ol style="list-style-type: lower-alpha">
+<li>You may sign in using your existing Amazon account or you can create a
+                new account by selecting "I am a new user."</li>
+            <li>Enter your contact information and confirm your acceptance of the AWS
+                Customer Agreement.</li>
+            <li>Once you have created an Amazon Web Services Account, you may need to
+                accept a telephone call to verify your identity. Some students have used
+                <a href="https://www.google.com/voice" title="Link: https://www.google.com/voice">Google Voice</a>successfully if you don't have or don't want to give a
+                    mobile number. You need Access Identifiers to make valid web service requests.</li>
+        </ol>
+</li>
+    <li>Go to <a href="http://aws.amazon.com/" title="Link: http://aws.amazon.com/">http://aws.amazon.com/</a>
+and sign
+        in. You need to double-check that your account is signed up for three of
+        their services: Simple Storage Service (S3), Elastic Compute Cloud (EC2),
+        and Amazon Elastic MapReduce by clicking <a href="https://aws-portal.amazon.com/gp/aws/manageYourAccount" title="Link: https://aws-portal.amazon.com/gp/aws/manageYourAccount">
+here</a> -- you should see "Services You're Signed Up For" under "Manage
+        Your Account".</li>
+</ol>
+<h2 id="Setting_up_an_EC2_key_pair">Setting up an EC2 key pair</h2>
+
+<p>Note: Some students were having problem running job flows because of no
+    active key found, go to <a href="https://portal.aws.amazon.com/gp/aws/securityCredentials" title="Link: https://portal.aws.amazon.com/gp/aws/securityCredentials">AWS security credentials page</a> and
+    make sure that you see a key under the access key, if not just click Create
+    a new Access Key.</p>
+<p>To connect to an Amazon EC2 node, such as the master nodes for the Hadoop
+    clusters you will be creating, you need an SSH key pair. To create and
+    install one, do the following:</p>
+<ol>
+<li>After setting up your account, follow
+<a href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/generating-a-keypair.html" target="_blank">
+Amazon's instructions</a> to create a key pair. Follow the instructions
+        in section "Having AWS create the key pair for you," subsection "AWS Management
+        Console." (Don't do this in Internet Explorer, or you might not be able
+        to download the .pem private key file.)</li>
+    <li>Download and save the .pem private key file to disk. We will reference
+        the .pem file as <code>&lt;/path/to/saved/keypair/file.pem&gt;</code>
+in
+        the following instructions.</li>
+    <li>Make sure only you can access the .pem file. If you do not change the
+        permissions, you will get an error message later: <pre>$ chmod 600 &lt;/path/to/saved/keypair/file.pem&gt;</pre>
+
+    </li>
+    <li>Note: This step will NOT work on Windows 7 with cygwin. Windows 7 does
+        not allow file permissions to be changed through this mechanism, and they
+        must be changed for ssh to work. So if you must use Windows, you should
+        use <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> as
+        your ssh client. In this case, you will further have to transform this
+        key file into PuTTY format. For more information go to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" title="Link: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html</a> and
+        look under "Private Key Format."</li>
+</ol>
+<h2 id="Running_jobs_on_AWS">Starting an AWS Cluster and running Pig Interactively</h2>
+
+<p>To run a Pig job on AWS, you need to start up an AWS cluster using the
+<a href="https://console.aws.amazon.com/elasticmapreduce/home" target="_blank" title="Link: https://console.aws.amazon.com/elasticmapreduce/home">Web Management Console</a> and connect to the Hadoop master node. Follow
+        the steps below. You may also find <a href="http://aws.amazon.com/articles/2729" target="_blank" title="Link: http://aws.amazon.com/articles/2729">Amazon's interactive Pig tutorial</a> useful, but note that
+        the screenshots are slightly out of date.</p>To set up and connect to a
+pig cluster, perform the following steps:
+<ul></ul>
+<ol>
+<li>Go to <a href="http://console.aws.amazon.com/elasticmapreduce/home" title="Link: http://console.aws.amazon.com/elasticmapreduce/home">http://console.aws.amazon.com/elasticmapreduce/home</a> and
+            sign in.</li>
+        <li>Click the "Amazon Elastic MapReduce" tab.</li>
+        <li>Click the "Create New Job Flow" button.</li>
+        <li>In the "Job Flow Name" field type a name such as "Pig Interactive Job
+            Flow".</li>
+        <li>Select "Pig Program" from the drop down box, and then click "Continue".
+            Also select: "Run your own application".</li>
+        <li>Select the "Start an Interactive Pig Session" radio button and click "Continue".</li>
+        <li>On the next page, select only <strong>1 small core instance</strong>. In the
+            last question of the quiz you will need to set your cluster to have 20 small nodes, rather than the 1 node.</li>
+        <li>On the next page, make sure that the EC2 Key Pair that is selected is
+            the one you created above</li>
+        <li>On the last page, you will be asked if you want to configure <i>Bootstrap Actions</i>.
+            You do, because the default configuration can sometimes run into memory
+            problems. Select "Configure your Bootstrap Actions." Then, under "Action
+            Type," select "Memory Intensive Configuration."</li>
+        <li>When you are done setting up your workflow and you come back to your management
+            console, you may need to refresh the page to see your workflow. It may
+            take a few minutes for your job flow to launch. If your cluster fails or
+            takes an extraordinarily long time, Amazon may be near capacity. Try again
+            later.
+            <br><br>
+</li>
+        <li>Now you need to obtain the Master Public DNS Name. You get this by clicking
+            (highlighting) your job flow, which creates a frame at the bottom of your
+            window. Scroll down in that frame and you will find the Master Public DNS
+            at the bottom. We call this Master Public DNS name <span style="color:red; font-weight:bold;">&lt;master.public-dns-name.amazonaws.com&gt;</span>.</li>
+        <br><li>Now you are ready to connect to your cluster and run Pig jobs. From a
+            terminal, use the following command:
+            <br><br><span class="programlisting"><code>$ ssh -o "ServerAliveInterval 10" -i &lt;/path/to/saved/keypair/file.pem&gt;  hadoop@<span style="color: red; font-weight: bold;">&lt;master.public-dns-name.amazonaws.com&gt;</span>
+            </code>
+            </span>
+            <br><br>
+</li>
+        <li>Once you connect successfully, just type <pre> <strong>$ pig</strong></pre>
+
+        </li>
+        <li>Now you should have a Pig prompt:
+            <br><pre>  <strong>grunt&gt;</strong>
+</pre>
+In this quiz we will use pig only interactively. (The alternative
+            is to have pig read the program from a file.)
+            <br>This is the interactive mode where you type in pig queries. Here you will
+            cut and paste <code>example.pig</code>. You are now ready to return to the
+            quiz.
+            <br>
+</li>
+    </ol>
+<br>Other useful information:
+    <ul>
+<li>For the first job you run, Hadoop will create the output directory for
+            you automatically. But Hadoop refuses to overwrite existing results. So
+            you will need to move your prior results to a different directory before
+            re-running your script, specify a different output directory in the script,
+            or delete the prior results altogether.
+            <br>To see how to perform these tasks and more, see <a href="#managingresults" title="Link: #managingresults">"Managing the results of your Pig queries"</a> below.</li>
+        <li>To exit pig, type <code>quit</code> at the <code>grunt&gt;</code> promt. To
+            terminate the ssh session, type <code>exit</code> at the unix prompt: after
+            that you must terminate the AWS cluster (see next).</li>
+        <li>To kill a pig job type CTRL/C while pig is running.This kills pig only:
+            after that you need to kill the hadoop job. We show you how to do this
+            below.
+            <br>
+</li>
+    </ul>
+<h2 id="Terminating_a_running_cluster">Monitoring Hadoop jobs</h2>
+
+    <p>By far the easiest way to do this from linux or a mac is to use ssh tunneling.</p>
+    <ol>
+<li>Run this command</li>
+<pre>ssh -L 9100:localhost:9100 -L 9101:localhost:9101  -i ~/.ssh/&lt;your pem file&gt; hadoop@&lt;master DNS&gt;</pre>
+
+        <li>Open your browser to <a href="http://localhost:9100" title="Link: http://localhost:9100">http://localhost:9100</a> 
+        </li>
+    </ol>
+<br>From there, you can monitor your jobs' progress using the UI.
+    <p></p>
+    <p>There are two other ways to do this: using <a href="http://lynx.isc.org/" target="_new">lynx</a> or using your own browser with a SOCKS proxy.</p>
+    <ol>
+<li>Using LYNX. Very easy, you don't need to download anything. Open a separate <code>ssh</code> connection
+            to the AWS master node and type:
+            <br><br><code>% lynx http://localhost:9100/ </code>
+            <br><br>Lynx is a text browswer. Navigate as follows: <code>up/down arrows </code>=
+            move through the links (current link is highlighted); <code>enter</code> =
+            follows a link; <code>left arrow</code> = return to previous page.
+            <br><br>Examine the webpage carefully, while your pig program is running. You
+            should find information about the map tasks, the reduce tasks, you should
+            be able to drill down into each map task (for example to monitor its progress);
+            you should be able to look at the log files of the map tasks (if there
+            are runtime errors, you will see them only in these log files).
+            <br><br>
+</li>
+        <li>Using SOCKS proxy, and your own browser. This requires more work, but
+            the nicer interface makes it worth the extra work
+            <ol>
+<li>Set up your browser to use a proxy when connecting to the master node. <em>Note: If the instructions fail for one browser, try the other browser</em>.
+                    In particular, it seems like people are having problems with Chrome but
+                    Firefox, especially following Amazon's instructions, works well.
+                    <ul>
+<li>Firefox:
+                            <ol>
+<li>Install the <a href="https://addons.mozilla.org/en-US/firefox/addon/2464/">
+              FoxyProxy extension</a> for Firefox.li&gt;</li>
+                                <li>Copy the <code>foxyproxy.xml</code> configuration file from the course materials
+                                    repo into your <a href="http://support.mozilla.com/kb/profiles">Firefox profile folder</a>.</li>
+                                <li>If the previous step doesn't work for you, try deleting the <code>foxyproxy.xml</code> you
+                                    copied into your profile, and using <a href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/UsingtheHadoopUserInterface.html#AccessingtheHadoopUserInterfacetoMonitorJobStatus2">
+                Amazon's instructions</a> to set up FoxyProxy manually.
+                                    If you use Amazon's instructions, be careful to use port 8888 instead of
+                                    the port in the instructions.</li>
+                            </ol>
+</li>
+                        <li>Chrome:
+                            <ol>
+<li>Option 1: FoxyProxy is <a href="http://getfoxyproxy.org/downloads.html">now available for Chrome</a> as
+                                    well.</li>
+                                <li>Option 2: You can try <a href="https://chrome.google.com/webstore/detail/caehdcpeofiiigpdhbabniblemipncjj" target="_new" title="Link: https://chrome.google.com/webstore/detail/caehdcpeofiiigpdhbabniblemipncjj">proxy switch!</a>
+                                </li>
+                                <li>Click the <em>Tools</em> icon (upper right corner; don't confuse it with
+                                    the Developer's Tools !), Go to <em>Tools, </em>go to <em> Extensions</em>.
+                                    Here you will see the ProxySwitch!: click on <em>Options</em>.</li>
+                                <li>Create a new Proxy Profile: Manual Configuration, Profile name = Amazon
+                                    Elastic MapReduce (any name you want), SOCKS Host = localhost, Port = 8888
+                                    (you can choose any port you want; another favorite is <span class="programlisting">8157</span>),
+                                    SOCKS v5. If you don't see "SOCKS", de-select the option to "Use the same
+                                    proxy server for all protocols".</li>
+                                <li>Create two new switch rules (give them any names, say AWS1 and AWS2).
+                                    Rule 1: pattern=*.amazonaws.com:*/*, Rule 2: pattern=*.ec2.internal:*/*.
+                                    For both, Type=wildcard, Proxy profile=[the profile you created at the
+                                    previous step].</li>
+                            </ol>
+</li>
+                    </ul>
+</li>
+                <li>Open a new local terminal window and create the SSH SOCKS tunnel to the
+                    master node using the following: <pre class="programlisting">$ ssh -o "ServerAliveInterval 10"<b> </b>-i &lt;/path/to/saved/keypair/file.pem&gt; -ND 8888 hadoop@<span style="color: red; font-weight: bold;">&lt;master.public-dns-name.amazonaws.com&gt;</span></pre>
+(The <code>-N</code> option
+                    tells <code>ssh</code> not to start a shell, and the <code>-D 8888</code> option
+                    tells <code>ssh</code> to start the proxy and have it listen on port 8888.)
+                    <br><br>The resulting SSH window will appear to hang, without any output; this
+                    is normal as SSH has not started a shell on the master node, but just created
+                    the tunnel over which proxied traffic will run.
+                    <br><br>Keep this window running in the background (minimize it) until you are
+                    finished with the proxy, then close the window to shut the proxy down.</li>
+                <li>Open your browser, and type one of the following URLs:
+                    <ul>
+<li>For the job tracker: <code>http://<span style="color:red; font-weight:bold">&lt;master.public-dns-name.amazonaws.com&gt;</span>:9100/</code>
+                        </li>
+                        <li>For HDFS management: <code>http://<span style="color:red; font-weight:bold">&lt;master.public-dns-name.amazonaws.com&gt;</span>:9101/</code>
+                        </li>
+                    </ul>
+</li>
+            </ol>
+<blockquote>
+                <p>The job tracker enables you to see what MapReduce jobs are executing in
+                    your cluster and the details on the number of maps and reduces that are
+                    running or already completed.</p>
+                <p>Note that, at this point in the instructions, you will not see any MapReduce
+                    jobs running but you should see that your cluster has the capacity to run
+                    a couple of maps and reducers on your one instance.</p>
+                <p>The HDFS manager gives you more low-level details about your cluster and
+                    all the log files for your jobs. </p>
+</blockquote>
+</li>
+</ol>
+<h2>Killing a Hadoop Job</h2>
+
+    <p>Later, in the assignment, we will show you how to launch MapReduce jobs
+        through Pig. You will basically write Pig Latin scripts that will be translated
+        into MapReduce jobs (see lecture notes). Some of these jobs can take a
+        long time to run. If you decide that you need to interrupt a job before
+        it completes, here is the way to do it:</p>
+    <p>If you want to kill pig, you first type CTRL/C, which kills pig only.
+        Next, kill the hadoop job, as follows. From the job tracker interface find
+        the hadoop <code>job_id</code>, then type:</p>
+    <blockquote>
+        <p> <code>% hadoop job -kill job_id</code>
+        </p>
+    </blockquote>
+    <p>You do not need to kill any jobs at this point.</p>
+    <p>However, you can now exit pig (just type "quit") and exit your ssh session.
+        You can also kill the SSH SOCKS tunnel to the master node.</p>
+
+    
+<h2>Terminating an AWS cluster</h2>
+
+    <p>When you are done running Pig scripts, make sure to <strong>ALSO</strong> terminate
+        your job flow. This is a step that you need to do <strong>in addition to </strong>stopping
+        pig and Hadoop (if necessary) above.</p>
+    <p>This step shuts down your AWS cluster:</p>
+    <ol>
+<li>Go to the <a href="https://console.aws.amazon.com/elasticmapreduce/home" target="_blank"> Management Console.</a>
+        </li>
+        <li>Select the job in the list.</li>
+        <li>Click the Terminate button (it should be right below "Your Elastic MapReduce
+            Job Flows").</li>
+        <li>Wait for a while (may take minutes) and recheck until the job state becomes
+            TERMINATED.</li>
+    </ol>
+<p><strong>Pay attention to this step</strong>. If you fail to terminate
+        your job and only close the browser, or log off AWS, your AWS will continue
+        to run, and AWS will continue to charge you: for hours, days, weeks, and
+        when your credit is exhausted, it chages your creditcard. Make sure you
+        don't leave the console until you have confirmation that the job is terminated.</p>
+    <p>You can now shut down your cluster.</p>
+    
+<h2 id="job_tracker"></h2>
+
+    
+<h2>Checking your Balance  </h2>
+
+    <p>Please check your balance regularly!!!</p>
+    <ol>
+<li>Go to the <a href="https://console.aws.amazon.com/elasticmapreduce/home" target="_blank"> Management Console.</a>
+        </li>
+        <li>Click on your name in the top right corner and select "Account Activity".</li>
+        <li>Now click on "detail" to see any charges &lt; $1.</li>
+    </ol>
+<p>To avoid unnecessary charges, terminate your job flows when you are not
+        using them.</p>
+    <p><strong>USEFUL</strong>: AWS customers can now use <strong class="important">billing alerts</strong> to
+        help monitor the charges on their AWS bill. You can get started today by
+        visiting your <a href="https://aws-portal.amazon.com/gp/aws/developer/account/index.html" target="_blank">Account Activity page</a> to enable monitoring of your charges.
+        Then, you can set up a billing alert by simply specifying a bill threshold
+        and an e-mail address to be notified as soon as your estimated charges
+        reach the threshold. </p>
+<a id="managingresults"><h2>Managing the results of your Pig queries</h2></a>
+
+    <p>For the next step, you need to restart a new cluster as follows. Hopefully,
+        it should now go very quickly:</p>
+    <ul>
+<li>Start a new cluster with one instance.</li>
+        <li>Start a new interactive Pig session (through grunt)</li>
+        <li>Start a new SSH SOCKS tunnel to the master node (if you are using your
+            own browser)</li>
+    </ul>
+<p>We will now get into more details about running Pig scripts.</p>
+    <p>Your pig program stores the results in several files in a directory. You
+        have two options: (1) store these files in the Hadoop File System, or (2)
+        store these files in S3. In both cases you need to copy them to your local
+        machine.</p>
+    
+<h3>1. Storing Files in the Hadoop File System</h3>
+
+    <p>This is done through the following pig command (used in <code>example.pig</code>):</p>
+<pre> store count_by_object_ordered into '/user/hadoop/example-results' using PigStorage();</pre>
+
+    <p>Before you run the pig query, you need to (A) create the /user/hadoop
+        directory. After you run the query you need to (B) copy this directory
+        to the local directory of the AWS master node, then (C) copy this directory
+        from the AWS master node to your local machine.</p>
+    
+<h4>1.A. Create the "/user/hadoop Directory" in the Hadoop Filesystem</h4>
+
+    <p>You will need to do this for each new job flow that you create.</p>
+    <p>To create a <code>/user/hadoop</code> directory on the AWS cluster's HDFS
+        file system run this from the AWS master node:</p>
+<pre>% hadoop dfs -mkdir /user/hadoop
+</pre>
+Check that the directory was created by listing it with this command:
+<pre>% hadoop dfs -ls /user/hadoop
+</pre>
+
+    <p>You may see some output from either command, but you should not see any
+        errors.</p>
+    <p>You can also do this directly from grunt with the following command.</p>
+<pre>grunt&gt; fs -mkdir /user/hadoop </pre>
+
+    <p>Now you are ready to run your first sample program. Take a look at the
+        starter code that we provided in the course materials repo. Copy and paste
+        the content of <code>example.pig.</code>
+    </p>
+    <p><strong>Note</strong>: The program may appear to hang with a 0% completion
+        time... go check the job tracker. Scroll down. You should see a MapReduce
+        job running with some non-zero progress.</p>
+    <p><strong>Note 2</strong>: Once the first MapReduce job gets to 100%...
+        if your grunt terminal still appears to be suspended... go back to the
+        job tracker and make sure that <strong>the reduce phase is also 100% complete</strong>.
+        It can take some time for the reducers to start making any progress.</p>
+    <p><strong>Note 3</strong>: The example generates more than 1 MapReduce job...
+        so be patient.</p>
+    
+<h4>1.B. Copying files from the Hadoop Filesystem</h4>
+
+    <p>The result of a pig script is stored in the hadoop directory specified
+        by the <code>store</code> command. That is, for <code>example.pig</code>,
+        the output will be stored at
+<code>/user/hadoop/example-results</code>,
+        as specified in the script. HDFS is separate from the master node's file
+        system, so before you can copy this to your local machine, you must copy
+        the directory from HDFS to the master node's Linux file system:</p>
+<pre>% hadoop dfs -copyToLocal /user/hadoop/example-results example-results</pre>
+
+    <p>This will create a directory <code>example-results</code> with <code>part-*</code> files
+        in it, which you can copy to your local machine with <code>scp</code>. You
+        can then concatenate all the <code>part-*</code> files to get a single results
+        file, perhaps sorting the results if you like.</p>
+    <p>An easier option may be to use</p>
+<pre>% hadoop fs -getmerge  /user/hadoop/example-results example-results</pre>
+
+    <p>This command takes a source directory and a destination file as input
+        and concatenates files in src into the destination local file.</p>
+    <p>
+        <br>Use <code>hadoop dfs -help</code> or see the <a href="http://hadoop.apache.org/docs/stable/file_system_shell.html"><code>hadoop dfs</code> guide</a>
+to
+        learn how to manipulate HDFS. (Note that <code>hadoop fs</code> is the same
+        as <code>hadoop dfs</code>.)
+<br></p>
+    
+<h4>1.C. Copying files to or from the AWS master node</h4>
+
+    <ul>
+<li>To copy one file from the master node back to your computer, run this
+            command <em>on the local computer:</em>
+            <br><br><pre>$ scp -o "ServerAliveInterval 10" -i &lt;/path/to/saved/keypair/file.pem&gt; hadoop@<span style="color: red; font-weight: bold;">&lt;master.public-dns-name.amazonaws.com&gt;</span>:&lt;file_path&gt; .
+    </pre>
+where <code>&lt;file_path&gt;</code> can be absolute or relative
+            to the AWS master node's home folder. The file should be copied onto your
+            current directory ('.') on your local computer.
+            <br><br>
+</li>
+        <li>Better: copy an entire directory, recursively. Suppose your files are
+            in the directory <code>example-results</code>. They type the following <em>on your loal computer</em>: <pre>$ scp -o "ServerAliveInterval 10" -i &lt;/path/to/saved/keypair/file.pem&gt; -r hadoop@<span style="color: red; font-weight: bold;">&lt;master.public-dns-name.amazonaws.com&gt;</span>:example-results .</pre>
+
+        </li>
+        <li>As an alternative, you may run the scp command on the AWS master node,
+            and connect to your local machine. For that, you need to know your local
+            machine's domain name, or IP address, and your local machine needs to accept
+            ssh connections.</li>
+    </ul>
+<h3>2. Storing Files in S3</h3>
+
+    <p>To use this approach, go to your AWS Management Console, click on Create
+        Bucket, and create a new bucket (=directory). Give it a name that may be
+        a public name. Do not use any special chatacters, including underscore.
+        Let's say you call it<code> superman</code>. Click on Actions, Properties,
+        Permissions. Make sure you have all the permissions.</p>
+    <p>Modify the store command of <code>example.pig</code> to:</p>
+<pre> store count_by_object_ordered into 's3n://superman/example-results';</pre>
+
+    <p>Run your pig program. When it terminates, then in your S3 console you
+        should see the new directory <code>example-results</code>. Click on individual
+        files to download. The number of files depends on the number of reduce
+        tasks, and may vary from one to a few dozens. The only disadvantage of
+        using S3 is that you have to click on each file separately to download.</p>
+    <p>Note that S3 is permanent storage, and you are charged for it. You can
+        safely store all your query answers for several weeks without exceeding
+        your credit; at some point in the future remember to delete them.</p>
+    <p>
+        <br></p>
+    <p> </p>
+</div>
+<hr>
+<div>
+    <div style="float:left">
+    	    	    </div>
+    <div style="float:right;text-align:right;font-size:10px;">
+    	Created Thu 23 May 2013 11:02 PM PDT (UTC -0700)<br>
+    	Last Modified Fri 24 May 2013 11:20 AM PDT (UTC -0700)    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+        
+    
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/spark.js"></script>
+
+<script type="text/javascript">
+    // SET UP THE MULTITRACKER
+        window.logger = window.Log({level:"error"});
+        var parts = location.host.split(".");
+    while(parts.length > 2) { parts.shift(); }
+
+    window.multitracker = window.MultiTracker({logger:window.logger});
+    window.multitracker.register('204', window._204 = window._204 || []);
+    window.multitracker.register('ga', window._gaq = window._gaq || [], 'google');
+
+    // SET UP GA and 204
+    window._gaq.push(['_setAccount', 'UA-28377374-1']);
+    window._gaq.push(['_setDomainName', 'coursera.org']);
+    window._gaq.push(['_setAllowLinker', true]);  
+    window._gaq.push(['_trackPageview']);
+    
+    window._204.push({key:"pageview", val:{}});
+    window._204.push(["client", "spark"]);
+    window._204.push(["user", 1513511]);
+    window._204.push(["domain", "." + parts.join(".")]);
+
+    // override our multitracker queues with the ga queue when it is ready
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    
+      ga.onload = ga.onreadystatechange = function() {
+          ga.onreadystatechange = ga.onload = null;
+          window.multitracker.get('ga').queue = window._gaq;
+      };
+    })();
+
+    // override our multitracker queues with the 204 queue when it is ready
+    (function() {
+      var a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;
+      a.src = 'https://eventing.coursera.org/204.min.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(a, s);
+      a.onload = a.onreadystatechange = function() {
+          a.onreadystatechange = a.onload = null;
+          window.multitracker.get('204').queue = window._204;
+      };
+    })();
+</script>
+
+<script>
+  // Set up shared AB testing object
+  (function() {
+    window.ab = {};
+
+    // we want to share the 204 session cookie with the AB session cookie...
+    var sessionId = AB.makeSession("__204u", {expires:356, domain:"." + location.host});
+        var debug = true;
+    
+    window.ab.user = window.AB(1513511, "user", {debug:debug, tracker:window.multitracker, logger:window.logger});
+    window.ab.session = window.AB(sessionId, "session", {debug:debug, tracker:window.multitracker, logger:window.logger});
+
+    if(window.CourseraABExperiments.user) {
+        window.ab.user.addExperiments(window.CourseraABExperiments.user);
+        window.ab.user.runExperimentsOn("body");
+    }
+
+    if(window.CourseraABExperiments.session) {
+        window.ab.session.addExperiments(window.CourseraABExperiments.session);
+        window.ab.session.runExperimentsOn("body");
+    }
+  })();
+</script>
+
+
+    <script>
+      // Set up help widget
+      (function() {
+        $("[data-helpwidget]").each(function() {
+            window.HelpWidget(this, {tracker: window.multitracker});
+        });
+       })();
+ 
+        $("[data-readme]").each(function() {
+            window.ReadMe(this);
+        });
+    </script>
+
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/modal_focus.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/get_query_parameters.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/core/js/signature_track.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/generic/js/item_list.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/generic/js/navbar.js" type="text/javascript"></script>
+
+    
+    <script>
+     // Set up help widget
+      (function() {
+        $("[data-helpwidget]").each(function() {
+            window.HelpWidget(this, {tracker: window.multitracker});
+        });
+       })();
+    </script>
+
+    
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  
+  styleSheets: [],
+  styles: {},
+
+  jax: ["input/TeX"],
+  
+  extensions: ["tex2jax.js"],
+
+  preJax: null,
+  postJax: null,
+
+  preRemoveClass: "MathJax_Preview",
+
+  showProcessingMessages: true,
+
+  messageStyle: "none",
+  
+  displayAlign: "center",
+  displayIndent: "0em",
+  
+  delayStartupUntil: "none",
+
+  skipStartupTypeset: false,
+  
+  elements: [],
+  
+  tex2jax: {
+	    inlineMath: [
+	                 ['$$','$$'],      // uncomment this for standard TeX math delimiters
+	                 ['\\(','\\)']
+	                 ],
+
+	                 displayMath: [
+	                 ['\\[','\\]']
+	                 ],
+
+    skipTags: ["script","noscript","style","textarea","pre","code"],
+    ignoreClass: "tex2jax_ignore",
+    processClass: "tex2jax_process",
+    processEscapes: false,
+    processEnvironments: true,
+    preview: "TeX"
+    
+  },
+  
+  mml2jax: {
+    preview: "alttext"
+    
+  },
+  
+  jsMath2jax: {
+    preview: "TeX"
+    
+  },
+
+  TeX: {
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    Macros: {},
+
+    extensions: ["AMSmath.js", "AMSsymbols.js"]
+    
+  },
+
+  //============================================================================
+  //
+  //  These parameters control the MathML inupt jax.
+  //
+  MathML: {
+    //
+    //  This specifies whether to use TeX spacing or MathML spacing when the
+    //  HTML-CSS output jax is used.
+    //
+    useMathMLspacing: false
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the HTML-CSS output jax.
+  //
+  "HTML-CSS": {
+    
+    scale: 100,
+    
+    availableFonts: ["STIX","TeX"],
+    
+    preferredFont: "TeX",
+    
+    webFont: "TeX",
+    
+    imageFont: "TeX",
+    
+    undefinedFamily: "STIXGeneral,'Arial Unicode MS',serif",
+      
+    showMathMenu: true,
+
+    styles: {},
+    
+    tooltip: {
+      delayPost: 600,          // milliseconds delay before tooltip is posted after mouseover
+      delayClear: 600,         // milliseconds delay before tooltip is cleared after mouseout
+      offsetX: 10, offsetY: 5  // pixels to offset tooltip from mouse position
+    }
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the NativeMML output jax.
+  //
+  NativeMML: {
+
+    scale: 100,
+
+    showMathMenu: true,
+    showMathMenuMSIE: true,
+
+    styles: {}
+  },
+  
+  MathMenu: {
+    delay: 400,
+    
+    helpURL: "http://www.mathjax.org/help/user/",
+
+    showRenderer: true,
+    showFontMenu: false,
+    showContext:  false,
+
+    windowSettings: {
+      status: "no", toolbar: "no", locationbar: "no", menubar: "no",
+      directories: "no", personalbar: "no", resizable: "yes", scrollbars: "yes",
+      width: 100, height: 50
+    },
+    
+    styles: {}
+    
+  },
+
+  MMLorHTML: {
+    prefer: {
+      MSIE:    "MML",
+      Firefox: "MML",
+      Opera:   "HTML",
+      other:   "HTML"
+    }
+  }
+});
+</script>
+<script type="text/javascript">
+(function () {
+
+  function loadMathJax() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://duqnjvq4jwr55.cloudfront.net/2.1/MathJax.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+
+  window.loadOrRefreshMathJax = function(domId) {
+    if (window.MathJax) {
+      if (domId) {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, domId]);
+      } else {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      }
+    } else {
+      loadMathJax();
+    }
+  }
+})();
+</script>
+    
+    <script type="text/javascript">
+        var site_base_url = "https:\/\/www.coursera.org\/";
+        var site_static_asset_url = "https:\/\/dt5zaw6a98blc.cloudfront.net\/site-static\/";
+        var spark_class_short_name = "datasci";
+        var spark_class_id = 346;
+        var spark_class_url = "\/datasci-001";
+        var spark_signature_url = "https:\/\/class.coursera.org\/datasci-001\/signature\/";
+        
+        var course_strings_name = "Introduction to Data Science";
+        var student_full_name = "Foo Lim";
+    </script>
+
+    
+<script type="text/javascript">$(function() { loadOrRefreshMathJax();})</script>
+<script src="https://dt5zaw6a98blc.cloudfront.net/site-static/a494316609b695042b37a87cc2f0420000889ae5/spark/app/textbook/js/textbook_wiki.js"></script>
+
+</body>
+
+</html>
